@@ -1708,8 +1708,6 @@ module.exports = {
   prettyPrint: prettyPrint,
   prettyPrintOne: prettyPrintOne,
   // include paths for css preprocessor support
-  includePaths: [
-    __dirname,
-    path.resolve(__dirname, '../styles')
-  ]
+  includePaths: ((typeof __dirname === 'undefined') ?
+    null : [__dirname, path.resolve(__dirname, '../styles')])
 };
